@@ -1,10 +1,6 @@
 "use client";
-// @ts-nocheck
-// import { useStateContext } from "@/context";
 import { useState } from "react";
-import { useContractWrite, useContract, Web3Button } from "@thirdweb-dev/react";
-import { ThirdwebProvider, metamaskWallet } from "@thirdweb-dev/react";
-import { Sepolia } from "@thirdweb-dev/chains";
+import { useContractWrite, useContract } from "@thirdweb-dev/react";
 
 const Page = () => {
   const { contract } = useContract(
@@ -52,69 +48,83 @@ const Page = () => {
   };
 
   return (
-    <ThirdwebProvider
-      activeChain={Sepolia}
-      clientId="b3e93dd3314ddba56637593cc3055d23"
-      supportedWallets={[metamaskWallet()]} // You can get a client id from dashboard settings
-    >
-      <div>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="owner">Owner*</label>
-            <input
-              id="owner"
-              required
-              type="text"
-              name="owner"
-              value={form.owner}
-              onChange={handleFormFieldChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="title">Title*</label>
-            <input
-              id="title"
-              required
-              type="text"
-              name="title"
-              value={form.title}
-              onChange={handleFormFieldChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="image">Image URL</label>
-            <input
-              id="image"
-              type="text"
-              name="image"
-              value={form.image}
-              onChange={handleFormFieldChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="description">Description</label>
-            <textarea
-              id="description"
-              name="description"
-              value={form.description}
-              onChange={handleFormFieldChange}
-            ></textarea>
-          </div>
-          <div>
-            <label htmlFor="date">Date</label>
-            <input
-              id="date"
-              type="date"
-              name="date"
-              value={form.date}
-              onChange={handleFormFieldChange}
-            />
-          </div>
-          <button type="submit">Submit</button>
-        </form>
-        {isLoading && <div>Loading...</div>}
-      </div>
-    </ThirdwebProvider>
+    <div className="flex justify-center items-center w-screen h-screen bg-black">
+      <form
+        onSubmit={handleSubmit}
+        className="flex justify-evenly top-0 h-[70%] w-[60%] bg-blue-900 flex-col items-center  "
+      >
+        <div className="flex justify-between items-center gap-5 ">
+          <label htmlFor="owner" className="font-bold text-white">
+            Owner*
+          </label>
+          <input
+            id="owner"
+            required
+            type="text"
+            name="owner"
+            placeholder="Address"
+            value={form.owner}
+            onChange={handleFormFieldChange}
+            className="shadow-slate-400"
+          />
+        </div>
+        <div className="flex justify-between items-center gap-5 ">
+          <label className="font-bold text-white" htmlFor="title">
+            Title*
+          </label>
+          <input
+            id="title"
+            required
+            type="text"
+            name="title"
+            value={form.title}
+            onChange={handleFormFieldChange}
+          />
+        </div>
+        <div className="flex justify-between items-center gap-5 ">
+          <label htmlFor="image" className="font-bold text-white">
+            Image URL
+          </label>
+          <input
+            id="image"
+            type="text"
+            name="image"
+            value={form.image}
+            onChange={handleFormFieldChange}
+          />
+        </div>
+        <div className="flex justify-between items-center gap-5 ">
+          <label htmlFor="description" className="font-bold text-white">
+            Description
+          </label>
+          <textarea
+            id="description"
+            name="description"
+            value={form.description}
+            onChange={handleFormFieldChange}
+          ></textarea>
+        </div>
+        <div className="flex justify-between items-center gap-5 ">
+          <label className="font-bold  text-white" htmlFor="date">
+            Date
+          </label>
+          <input
+            id="date"
+            type="date"
+            name="date"
+            value={form.date}
+            onChange={handleFormFieldChange}
+          />
+        </div>
+        <button
+          type="submit"
+          className="rounded bg-red-500 w-16 items-center flex justify-center text-white"
+        >
+          Submit
+        </button>
+      </form>
+      {isLoading && <div>Loading...</div>}
+    </div>
   );
 };
 

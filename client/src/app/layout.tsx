@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import { ThirdwebProvider } from "@/app/thirdweb";
+import { Sepolia } from "@thirdweb-dev/chains";
+import { signer } from "@/app/connect";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -15,10 +17,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <main className="m-h-screen relative"> {children}</main>
-      </body>
-    </html>
+    <ThirdwebProvider
+      activeChain={Sepolia}
+      clientId="b3e93dd3314ddba56637593cc3055d23"
+      signer={signer}
+    >
+      <html lang="en">
+        <body className={inter.className}>
+          <main className="m-h-screen relative"> {children}</main>
+        </body>
+      </html>
+    </ThirdwebProvider>
   );
 }
