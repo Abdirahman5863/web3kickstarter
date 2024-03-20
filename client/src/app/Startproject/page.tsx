@@ -1,11 +1,20 @@
 "use client";
 import { useState } from "react";
-import { useContractWrite, useContract } from "@thirdweb-dev/react";
+import {
+  useContractWrite,
+  useContract,
+  Web3Button,
+  useSigner,
+} from "@thirdweb-dev/react";
 
 const Page = () => {
   const { contract } = useContract(
     "0x975DDFD9b913e4c5b9C354aceaEa12D7e24D587a"
   );
+
+  const signer = useSigner();
+
+  console.log("Signer ", signer);
   const {
     mutateAsync,
     isLoading: loading,
@@ -48,10 +57,14 @@ const Page = () => {
   };
 
   return (
+    // <Web3Button
+    //   contractAddress="{{contract_address}}"
+    //   action={async (contract) => contract.call("createProject")}
+    // >
     <div className="flex justify-center items-center w-screen h-screen bg-black">
       <form
         onSubmit={handleSubmit}
-        className="flex justify-evenly top-0 h-[70%] w-[60%] bg-blue-900 flex-col items-center  "
+        className="flex justify-evenly top-0 h-[70%] w-auto bg-blue-900 flex-col items-center  "
       >
         <div className="flex justify-between items-center gap-5 ">
           <label htmlFor="owner" className="font-bold text-white">
@@ -125,6 +138,7 @@ const Page = () => {
       </form>
       {isLoading && <div>Loading...</div>}
     </div>
+    // </Web3Button>
   );
 };
 

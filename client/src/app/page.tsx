@@ -11,7 +11,7 @@ function App() {
 const Component = () => {
   return (
     <main className="overflow-hidden">
-      <Navbar />
+      {/* <Navbar /> */}
       <section className="bg-hero  bg-center h-[900px] w-screen bg-cover">
         <Play />
       </section>
