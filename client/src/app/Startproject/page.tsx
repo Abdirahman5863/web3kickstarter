@@ -9,7 +9,7 @@ import {
 
 const Page = () => {
   const { contract } = useContract(
-    "0x975DDFD9b913e4c5b9C354aceaEa12D7e24D587a"
+    process.env.NEXT_PUBLIC_TEMPLATE_SMART_CONTRACT
   );
 
   const signer = useSigner();
@@ -61,15 +61,14 @@ const Page = () => {
     //   contractAddress="{{contract_address}}"
     //   action={async (contract) => contract.call("createProject")}
     // >
-    <div className="flex justify-center items-center w-screen h-screen bg-black">
+    <div className="flex justify-center items-center w-screen h-screen bg-slate-100 overflow-hidden">
       <form
         onSubmit={handleSubmit}
-        className="flex justify-evenly top-0 h-[70%] w-auto bg-blue-900 flex-col items-center  "
+        className="flex justify-evenly top-0 h-[70%] w-[70%] bg-blue-900 flex-col items-center   "
       >
-        <div className="flex justify-between items-center gap-5 ">
-          <label htmlFor="owner" className="font-bold text-white">
-            Owner*
-          </label>
+        <div className="flex justify-between items-center gap-5 flex-col ">
+          <div className="flex gap-3">
+            <h1>OWNER:</h1>
           <input
             id="owner"
             required
@@ -80,61 +79,68 @@ const Page = () => {
             onChange={handleFormFieldChange}
             className="shadow-slate-400"
           />
-        </div>
-        <div className="flex justify-between items-center gap-5 ">
-          <label className="font-bold text-white" htmlFor="title">
-            Title*
-          </label>
-          <input
+          </div>
+          
+
+<div className="flex gap-3"> 
+  <h1>TITLE:</h1>
+   <input
             id="title"
             required
+            placeholder="Title"
             type="text"
             name="title"
             value={form.title}
             onChange={handleFormFieldChange}
-          />
-        </div>
-        <div className="flex justify-between items-center gap-5 ">
-          <label htmlFor="image" className="font-bold text-white">
-            Image URL
-          </label>
-          <input
+            className=""
+
+          /></div>
+        
+<div className="flex gap-3">
+  <h1>IMAGE URL:</h1>
+<input
             id="image"
+            placeholder="Image"
             type="text"
             name="image"
             value={form.image}
             onChange={handleFormFieldChange}
           />
-        </div>
-        <div className="flex justify-between items-center gap-5 ">
-          <label htmlFor="description" className="font-bold text-white">
-            Description
-          </label>
-          <textarea
+</div>
+       
+<div className="flex gap-3">
+  <h1>DESCRIPTION:</h1>
+<textarea
             id="description"
+            className="w-[200px] h-[90px]"
+            placeholder="Description"
             name="description"
             value={form.description}
             onChange={handleFormFieldChange}
           ></textarea>
-        </div>
-        <div className="flex justify-between items-center gap-5 ">
-          <label className="font-bold  text-white" htmlFor="date">
-            Date
-          </label>
-          <input
+</div>
+          
+<div className="flex gap-3">
+  <h1>DATE:</h1>
+<input
+
             id="date"
+            placeholder="Date"
             type="date"
             name="date"
             value={form.date}
             onChange={handleFormFieldChange}
           />
+</div>
+         
+
+          <button
+            type="submit"
+            className="rounded bg-red-500 w-16 items-center flex justify-center text-white"
+          >
+            Submit
+          </button>
         </div>
-        <button
-          type="submit"
-          className="rounded bg-red-500 w-16 items-center flex justify-center text-white"
-        >
-          Submit
-        </button>
       </form>
       {isLoading && <div>Loading...</div>}
     </div>

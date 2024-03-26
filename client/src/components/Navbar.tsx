@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <ThirdwebProvider>
       {showSearchInput && (
-        <div className="w-auto flex  h-[70px]   items-center shadow-lg">
+        <div className="w-auto flex  h-[70px]   items-center shadow-lg overflow-hidden">
           <input
             type="text"
             placeholder="Search project and categories"

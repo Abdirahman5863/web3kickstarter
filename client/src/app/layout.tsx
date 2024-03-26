@@ -24,7 +24,7 @@ export default function RootLayout({
       sdkOptions={sdk}
     >
       <html lang="en">
-        <body className={inter.className}>
+        <body className="overflow-x-hidden font-sans">
           <main className="m-h-screen relative">
             <Navbar />
             {children}

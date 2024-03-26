@@ -13,6 +13,9 @@ import { Pagination, Navigation, Mousewheel, Keyboard } from "swiper/modules";
 import "swiper/css/navigation";
 import { RxDotFilled } from "react-icons/rx";
 import { color } from "framer-motion";
+import { Key, ReactNode, useState } from "react";
+import { useContract, useContractRead } from "@thirdweb-dev/react";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 const items = [
   {
     id: 1,
@@ -135,7 +138,11 @@ const items = [
     desc: "957 people backed this",
   },
 ];
+
 const Play = () => {
+  const [id,setId] =useState(0)
+  const {contract}= useContract(process.env.NEXT_PUBLIC_TEMPLATE_SMART_CONTRACT)
+  const {data:Projects}=useContractRead(contract,"getProject")
   return (
     <div className="flex flex-col items-center text-center justify-center w-screen overflow-hidden xl:gap-[80px] md:gap-[40px] sm:gap-[20px]">
       <div className="flex flex-col text-center items-center pt-12">
@@ -159,15 +166,19 @@ const Play = () => {
           modules={[Pagination, Navigation, Mousewheel, Keyboard]}
           className="mySwiper"
         >
-          {items.map((item) => (
-            <SwiperSlide key={item.id}>
+          {Projects &&  Projects.map((project: {
+            description: ReactNode;
+            title: ReactNode;
+            image: string; id: Key | null | undefined; 
+}) => (
+            <SwiperSlide key={project.id}>
               <div
-                key={item.id}
+                key={project.id}
                 className="flex  flex-col justify-center m-0 items-center pb-[90px]"
               >
-                <div className="flex flex-wrap justify-center items-center  border-[6px] w-[490px] h-[280px] hover:border-hidden transition-transform duration-300 transform hover:scale-110 border-slate-100 group">
-                  <Image
-                    src={item.img}
+               <div className="flex flex-wrap justify-center items-center  border-[6px] w-[490px] h-[280px] hover:border-hidden transition-transform duration-300 transform hover:scale-110 border-slate-100 group">
+               <Image
+                    src={project.image}
                     alt="Play on Stream"
                     fill
                     className=" "
@@ -175,14 +186,16 @@ const Play = () => {
                   <div className="opacity-0 group-hover:opacity-100 duration-300 hover:animate-[wiggle_3s_ease-in-out_infinite] absolute inset-x-0 bottom-0   top-0 flex justify-center text-center items-center hover:bg-opacity-90 bg-green-900 text-slate-100 k font-normal">
                     Play On Stream
                   </div>
-                </div>
+
+               </div>
+              
                 <div className="flex items-center justify-center pt-7">
-                  <Link href={item.link}>
-                    <button className="font-bold">View Project</button>
-                  </Link>
+                  
+                    <button className="font-bold">{project.title}</button>
+                  
                 </div>
                 <div className="flex items-center justify-center">
-                  <p className="font-norml">{item.desc}</p>
+                  <p className="font-norml">{project.description}</p>
                 </div>
               </div>
             </SwiperSlide>
