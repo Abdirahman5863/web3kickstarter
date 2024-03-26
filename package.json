@@ -1,5 +1,11 @@
 {
   "dependencies": {
     "@thirdweb-dev/sdk": "^4.0.48"
-  }
+  },
+  "name": "web3kickstarter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Abdirahman5863/web3kickstarter.git",
+  "author": "Abdirahman5863 <abdirahmanabdi5863@gmail.com>",
+  "license": "MIT"
 }
