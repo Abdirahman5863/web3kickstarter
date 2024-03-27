@@ -57,82 +57,75 @@ const Page = () => {
   };
 
   return (
-    // <Web3Button
-    //   contractAddress="{{contract_address}}"
-    //   action={async (contract) => contract.call("createProject")}
-    // >
-    <div className="flex justify-center items-center w-screen h-screen bg-slate-100 overflow-hidden">
+    <div className="flex justify-center items-center w-screen h-screen bg-blue-500 overflow-hidden">
       <form
         onSubmit={handleSubmit}
-        className="flex justify-evenly top-0 h-[70%] w-[70%] bg-blue-900 flex-col items-center   "
+        className="flex justify-evenly top-0 h-[70%] w-[70%]  flex-col items-center   "
       >
         <div className="flex justify-between items-center gap-5 flex-col ">
           <div className="flex gap-3">
             <h1>OWNER:</h1>
-          <input
-            id="owner"
-            required
-            type="text"
-            name="owner"
-            placeholder="Address"
-            value={form.owner}
-            onChange={handleFormFieldChange}
-            className="shadow-slate-400"
-          />
+            <input
+              id="owner"
+              required
+              type="text"
+              name="owner"
+              placeholder="Address"
+              value={form.owner}
+              onChange={handleFormFieldChange}
+              className="shadow-slate-400"
+            />
           </div>
-          
 
-<div className="flex gap-3"> 
-  <h1>TITLE:</h1>
-   <input
-            id="title"
-            required
-            placeholder="Title"
-            type="text"
-            name="title"
-            value={form.title}
-            onChange={handleFormFieldChange}
-            className=""
+          <div className="flex gap-3">
+            <h1>TITLE:</h1>
+            <input
+              id="title"
+              required
+              placeholder="Title"
+              type="text"
+              name="title"
+              value={form.title}
+              onChange={handleFormFieldChange}
+              className=""
+            />
+          </div>
 
-          /></div>
-        
-<div className="flex gap-3">
-  <h1>IMAGE URL:</h1>
-<input
-            id="image"
-            placeholder="Image"
-            type="text"
-            name="image"
-            value={form.image}
-            onChange={handleFormFieldChange}
-          />
-</div>
-       
-<div className="flex gap-3">
-  <h1>DESCRIPTION:</h1>
-<textarea
-            id="description"
-            className="w-[200px] h-[90px]"
-            placeholder="Description"
-            name="description"
-            value={form.description}
-            onChange={handleFormFieldChange}
-          ></textarea>
-</div>
-          
-<div className="flex gap-3">
-  <h1>DATE:</h1>
-<input
+          <div className="flex gap-3">
+            <h1>IMAGE URL:</h1>
+            <input
+              id="image"
+              placeholder="Image"
+              type="text"
+              name="image"
+              value={form.image}
+              onChange={handleFormFieldChange}
+            />
+          </div>
 
-            id="date"
-            placeholder="Date"
-            type="date"
-            name="date"
-            value={form.date}
-            onChange={handleFormFieldChange}
-          />
-</div>
-         
+          <div className="flex gap-3">
+            <h1>DESCRIPTION:</h1>
+            <textarea
+              id="description"
+              className="w-[200px] h-[90px]"
+              placeholder="Description"
+              name="description"
+              value={form.description}
+              onChange={handleFormFieldChange}
+            ></textarea>
+          </div>
+
+          <div className="flex gap-3">
+            <h1>DATE:</h1>
+            <input
+              id="date"
+              placeholder="Date"
+              type="date"
+              name="date"
+              value={form.date}
+              onChange={handleFormFieldChange}
+            />
+          </div>
 
           <button
             type="submit"
