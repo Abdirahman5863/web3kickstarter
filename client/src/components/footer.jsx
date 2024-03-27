@@ -4,9 +4,8 @@ import Image from "next/image";
 
 const footer = () => {
   return (
-    <div className="h-screen pt-[90px] flex justify-between  bg-footer bg-right-bottom bg-auto bg-no-repeat flex-col overflow-hidden ">
-      <div className="border-b-2 border-b-slate-300  justify-center  w-screen   h-[90px] border-t-2 border-t-slate-400 lg:flex md:flex xl:flex">
-        <div className=" justify-center   flex items-center    font-[400] text-[14px] lg:gap-[70px] sm:gap-[15px] md:gap[40px] xl:gap-[70px]">
+    <div className="h-screen  m-8 flex justify-between  bg-footer bg-right-bottom bg-auto bg-no-repeat flex-col ">
+        <div className="flex justify-between items-center border-y  h-screen border-gray-200 max-sm:flex-col ">
           <Link href="./arts" className="hover:underline hover:text-green-700 ">
             Arts
           </Link>
@@ -29,8 +28,7 @@ const footer = () => {
             Publishing
           </Link>
         </div>
-      </div>
-      <div className="flex justify-center  sm:gap-8  md:gap-[90px] lg:gap-[200px] xl:gap-[230px] items-center w-[90%] ">
+      <div className="flex justify-center  max-sm:gap-5 gap-16 items-center pt-4 h-screen">
         <div className="flex flex-col gap-4 justify-center">
           <div>
             <h1 className="font-[500] text-black  text-[15px]">ABOUT</h1>
@@ -145,12 +143,12 @@ const footer = () => {
           </div>
         </div>
       </div>
-      <div className=" justify-center  lg:flex md:flex xl:flex  sm:gap-1  md:gap-30px lg:gap-[50px] xl:gap-[50px] items-center w-screen">
-        <div className=" flex  pl-10 xl:gap-4 sm:gap-2 justify-center  ">
+      <div className=" justify-center flex max-sm:flex-col h-screen max-sm:gap-4 items-center w-screen gap-10">
+        <div className=" flex  pl-10 xl:gap-4 max-sm:gap-4 justify-center  ">
           <Image src="/k.png" alt="" width={18} height={18} />
           <span>Kickstarter, PBC © 2024</span>
         </div>
-        <div className="flex md:gap-3 sm:gap-1 justify-center items-center ">
+        <div className="flex md:gap-3 max-sm:gap-5 justify-center items-center ">
           <Image
             src="/face.png"
             alt=""
@@ -180,15 +178,15 @@ const footer = () => {
             className="hover:bg-green-500 rounded-xl "
           />
         </div>
-        <div class="language-picker js-language-picker  justify-center items-center w-auto flex l ">
+        <div class="language-picker js-language-picker  justify-center items-center w-auto flex pb-5 ">
           <form
             action=""
-            className="language-picker__form  flex  justify-center items-center md:gap-3 sm:gap-1 lg:gap-4 xl:gap-4   "
+            className="language-picker__form  flex  justify-center items-center md:gap-3 sm:gap-4 lg:gap-4 xl:gap-4   "
           >
             <select
               name="language-picker-select"
               id="language-picker-select class"
-              className="flex  hover:border-2 hover:border-slate-400 shadow xl:h-10 md:h-5 sm:h-2 lg:h-10  lg:w-auto xl:w-auto md:w-[150px] sm:w-[90px] translate-x-4  bg-slate-50"
+              className="flex  hover:border-2 hover:border-slate-400 shadow max-sm:w-[150px]  max-sm:h-6 translate-x-4  bg-slate-50"
             >
               <option lang="de" value="deutsch">
                 Deutsch
@@ -204,7 +202,7 @@ const footer = () => {
               </option>
             </select>
             <select
-              className="flex  hover:border-2 form-select hover:border-slate-400 shadow  translate-x-4  bg-slate-50 xl:h-10 md:h-5 sm:h-2 lg:h-10  lg:w-[200px] xl:w-[200px] md:w-[150px] sm:w-[90px]"
+              className="flex  hover:border-2 form-select hover:border-slate-400 shadow  translate-x-4  bg-slate-50  max-sm:h-6  max-sm:w-[150px]"
               id="currency"
               name="currency"
             >
@@ -377,7 +375,7 @@ const footer = () => {
           </form>
         </div>
       </div>
-      <div className="flex  items-center xl:gap-9 lg:gap-5 sm:gap-1 md:gap-5  border-t-2 h-auto  pb-2 w-screen border-slate-300">
+      <div className="flex  items-center justify-center max-sm:flex-col border-t-2 h-screen  gap-10 max-sm:gap-5 w-screen border-slate-300">
         <Link
           href="/"
           className="hover:underline hover:text-green-700 lg:text-[15px]  sm:text-[5px] md:text-[10px]  xl:text-[15px]"

@@ -146,9 +146,9 @@ const Play = () => {
   );
   const { data: Projects } = useContractRead(contract, "getProject");
   return (
-    <div className="flex flex-col items-center text-center justify-center w-screen overflow-hidden xl:gap-[80px] md:gap-[40px] sm:gap-[20px]">
+    <div className="flex flex-col items-center text-center justify-center w-screen  xl:gap-[80px] md:gap-[40px] max-sm:gap-[20px]">
       <div className="flex flex-col text-center items-center pt-12">
-        <h1 className="font-mono text-[90px] font- font-medium text-black ">
+        <h1 className="font-mono text-[90px]  font-medium text-black ">
           Play now
         </h1>
         <p className="text-center text-[20px] font-normal  ">
@@ -179,9 +179,9 @@ const Play = () => {
                 <SwiperSlide key={project.id}>
                   <div
                     key={project.id}
-                    className="flex  flex-col justify-center mt-5 items-center pb-[90px]"
+                    className="flex items-center  pb-[90px] flex-col gap-10 max-sm:gap-10"
                   >
-            <div className="flex  border-[6px] border-slate-200 flex-wrap gap-6 w-[180px] h-[90px] md:w-[200px] md:h-[100px] items-center  bg-green-500 lg:w-[400px] 
+            <div className="flex  pt-[50px] border-[6px] border-slate-200 flex-wrap gap-4 max:sm-gap-2 w-[180px] h-[90px] md:w-[200px] md:h-[100px] items-center  bg-green-500 lg:w-[400px] 
              hover:border-hidden lg:h-[200px] xl:w-[400px] xl:h-[200px] transition-transform duration-300 transform hover:scale-11 group">
 
                       <Image

@@ -113,7 +113,7 @@ const Adventure = () => {
       </div>
       <div
         id="slider"
-        className=" flex  justify-center flex-wrap   pt-10 sm:w-[80%]  md:w-[90%] xl:w-[90%] lg:[70%] h-auto gap-10"
+        className=" flex  justify-center flex-wrap   pt-10 max-sm:w-[100%]  md:w-[90%] xl:w-[90%] lg:[70%] h-auto gap-10"
       >
         {items.slice(0, displayCount).map((item) => (
           <div key={item.id} className="">

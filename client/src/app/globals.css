@@ -34,7 +34,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 150px;
+  padding-bottom: 220px;
   align-items: center;
   /* padding-left: 120px; */
   gap: 30px;
@@ -49,8 +49,8 @@
 .swiper-button-prev,
 .swiper-button-next {
   opacity: 1;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   color: gray; /* Text color of the navigation buttons */
   border-radius: 50%;
   display: flex;
