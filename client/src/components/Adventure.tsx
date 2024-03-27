@@ -93,6 +93,12 @@ const items = [
     link: "/View project",
     desc: "1,599 people backed this",
   },
+  {
+    id: 16,
+    img: "https://ksr-ugc.imgix.net/assets/041/284/125/2f02ab3ed2bc415f80628bc1672baf2a_original.jpg?ixlib=rb-4.1.0&w=700&fit=max&v=1686683025&auto=format&frame=1&q=92&s=f638149e1036323e6baa7b67b6f013d2",
+    link: "/View project",
+    desc: "1,599 people backed this",
+  },
 ];
 
 const Adventure = () => {
