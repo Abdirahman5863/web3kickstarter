@@ -140,9 +140,11 @@ const items = [
 ];
 
 const Play = () => {
-  const [id,setId] =useState(0)
-  const {contract}= useContract(process.env.NEXT_PUBLIC_TEMPLATE_SMART_CONTRACT)
-  const {data:Projects}=useContractRead(contract,"getProject")
+  const [id, setId] = useState(0);
+  const { contract } = useContract(
+    process.env.NEXT_PUBLIC_TEMPLATE_SMART_CONTRACT
+  );
+  const { data: Projects } = useContractRead(contract, "getProject");
   return (
     <div className="flex flex-col items-center text-center justify-center w-screen overflow-hidden xl:gap-[80px] md:gap-[40px] sm:gap-[20px]">
       <div className="flex flex-col text-center items-center pt-12">
@@ -153,7 +155,7 @@ const Play = () => {
           Over 200 games made with Kickstarter, now available on Steam
         </p>
       </div>
-      <div className="flex flex-wrap w-[80%]  ">
+      <div className="flex flex-wrap w-[90%]  ">
         <Swiper
           slidesPerView={2}
           spaceBetween={10}
@@ -166,40 +168,44 @@ const Play = () => {
           modules={[Pagination, Navigation, Mousewheel, Keyboard]}
           className="mySwiper"
         >
-          {Projects &&  Projects.map((project: {
-            description: ReactNode;
-            title: ReactNode;
-            image: string; id: Key | null | undefined; 
-}) => (
-            <SwiperSlide key={project.id}>
-              <div
-                key={project.id}
-                className="flex  flex-col justify-center m-0 items-center pb-[90px]"
-              >
-               <div className="flex flex-wrap justify-center items-center  border-[6px] w-[490px] h-[280px] hover:border-hidden transition-transform duration-300 transform hover:scale-110 border-slate-100 group">
-               <Image
-                    src={project.image}
-                    alt="Play on Stream"
-                    fill
-                    className=" "
-                  />
-                  <div className="opacity-0 group-hover:opacity-100 duration-300 hover:animate-[wiggle_3s_ease-in-out_infinite] absolute inset-x-0 bottom-0   top-0 flex justify-center text-center items-center hover:bg-opacity-90 bg-green-900 text-slate-100 k font-normal">
-                    Play On Stream
-                  </div>
+          {Projects &&
+            Projects.map(
+              (project: {
+                description: ReactNode;
+                title: ReactNode;
+                image: string;
+                id: Key | null | undefined;
+              }) => (
+                <SwiperSlide key={project.id}>
+                  <div
+                    key={project.id}
+                    className="flex  flex-col justify-center mt-5 items-center pb-[90px]"
+                  >
+            <div className="flex  border-[6px] border-slate-200 flex-wrap gap-6 w-[160px] h-[80px] md:w-[200px] md:h-[100px] items-center  bg-green-500 lg:w-[400px] 
+             hover:border-hidden lg:h-[200px] xl:w-[400px] xl:h-[200px] transition-transform duration-300 transform hover:scale-11 group">
 
-               </div>
+                      <Image
+                        src={project.image}
+                        alt="Play on Stream"
+                        fill
+                className="flex flex-wrap  shadow-slate-700"
               
-                <div className="flex items-center justify-center pt-7">
-                  
-                    <button className="font-bold">{project.title}</button>
-                  
-                </div>
-                <div className="flex items-center justify-center">
-                  <p className="font-norml">{project.description}</p>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
+                      />
+                      <div className="opacity-0 group-hover:opacity-100 duration-300 hover:animate-[wiggle_3s_ease-in-out_infinite] absolute inset-x-0 bottom-0   top-0 flex justify-center text-center items-center hover:bg-opacity-90 bg-green-900 text-slate-100 k font-normal">
+                        Play On Stream
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-center pt-7">
+                      <button className="font-bold">{project.title}</button>
+                    </div>
+                    <div className="flex items-center justify-center">
+                      <p className="font-norml">{project.description}</p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              )
+            )}
         </Swiper>
       </div>
 
