@@ -181,7 +181,7 @@ const Play = () => {
                     key={project.id}
                     className="flex  flex-col justify-center mt-5 items-center pb-[90px]"
                   >
-            <div className="flex  border-[6px] border-slate-200 flex-wrap gap-6 w-[160px] h-[80px] md:w-[200px] md:h-[100px] items-center  bg-green-500 lg:w-[400px] 
+            <div className="flex  border-[6px] border-slate-200 flex-wrap gap-6 w-[180px] h-[90px] md:w-[200px] md:h-[100px] items-center  bg-green-500 lg:w-[400px] 
              hover:border-hidden lg:h-[200px] xl:w-[400px] xl:h-[200px] transition-transform duration-300 transform hover:scale-11 group">
 
                       <Image

@@ -5,19 +5,19 @@
 .swiper-pagination {
   position: absolute;
   transform: translateX(-50%);
-  display: flex;
+  display: flex !important;
   list-style: none;
   padding: 0;
   justify-content: center !important;
-  align-items: center;
+  align-items: center !important;
   font-size: larger;
   gap: 10px;
 }
 
 .swiper-pagination-bullet {
-  width: 15px !important;
+  width: 10px !important;
   border-radius: 50% !important;
-  height: 15px !important;
+  height: 10px !important;
 }
 .swiper-pagination-bullet:hover {
   background-color: black;
