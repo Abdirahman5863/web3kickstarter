@@ -62,8 +62,8 @@ const Page = () => {
         onSubmit={handleSubmit}
         className="flex justify-evenly top-0 h-[70%] w-[70%]  flex-col items-center   "
       >
-        <div className="flex justify-between items-center gap-5 flex-col ">
-          <div className="flex gap-3">
+        <div className="flex justify-center  items-center gap-5 flex-col ">
+          <div className="flex gap-3 justify-center items-center">
             <h1>OWNER:</h1>
             <input
               id="owner"
@@ -77,7 +77,7 @@ const Page = () => {
             />
           </div>
 
-          <div className="flex gap-3">
+          <div className="flex gap-3 justify-center items-center" >
             <h1>TITLE:</h1>
             <input
               id="title"
@@ -91,7 +91,7 @@ const Page = () => {
             />
           </div>
 
-          <div className="flex gap-3">
+          <div className="flex gap-3 justify-center items-center">
             <h1>IMAGE URL:</h1>
             <input
               id="image"
@@ -103,7 +103,7 @@ const Page = () => {
             />
           </div>
 
-          <div className="flex gap-3">
+          <div className="flex gap-3 justify-center items-center">
             <h1>DESCRIPTION:</h1>
             <textarea
               id="description"
@@ -115,7 +115,7 @@ const Page = () => {
             ></textarea>
           </div>
 
-          <div className="flex gap-3">
+          <div className="flex gap-3 justify-center items-center">
             <h1>DATE:</h1>
             <input
               id="date"
