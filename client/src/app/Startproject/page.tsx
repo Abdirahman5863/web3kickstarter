@@ -77,7 +77,8 @@ const Page = () => {
               placeholder="Address"
               value={form.owner}
               onChange={handleFormFieldChange}
-              className="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring focus:ring-indigo-500"
+              className="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none
+               focus:border-indigo-500 focus:ring focus:ring-indigo-500"
             />
           </div>
 
@@ -130,7 +131,8 @@ const Page = () => {
               name="date"
               value={form.date}
               onChange={handleFormFieldChange}
-              className="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring focus:ring-indigo-500"
+              className="w-full border border-gray-300 px-3 py-2 rounded-lg 
+              shadow-sm focus:outline-none focus:border-indigo-500 focus:ring focus:ring-indigo-500"
             />
           </div>
 <div className="flex justify-center items-center mb-2">

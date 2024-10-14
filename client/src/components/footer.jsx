@@ -10,7 +10,7 @@ const footer = () => {
             Arts
           </Link>
           <Link href="./arts" className="hover:underline hover:text-green-700">
-            Comics & Illustration
+            Comics and Illustration
           </Link>
           <Link href="./arts" className="hover:underline hover:text-green-700">
             Design & Tech
